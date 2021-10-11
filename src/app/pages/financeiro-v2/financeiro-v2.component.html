@@ -1,0 +1,66 @@
+<!-- <br />
+<h2 style="vertical-align: center;">Financeiro</h2>
+<div class="border-top my-3"></div>
+<br /> -->
+
+<div class="layout-tela">
+    <!-- <div style="text-align: center;">
+            <label style="padding-bottom: 5px; font-size: x-large;"><b>Gráfico Financeiro</b></label>
+        </div> -->
+    <div class="conteudoPrincipal-consumo">
+        <div class="container">
+            <div class="conteudoPrincipal-consumo-grafico">
+                <combo-chart-component [view]="view" [scheme]="comboBarScheme" [colorSchemeLine]="lineChartScheme"
+                    [results]="barChart" [gradient]="gradient" [animations]="animations" [lineChart]="lineChartSeries"
+                    [gradient]="gradient" [xAxis]="showXAxis" [yAxis]="showYAxis" [legend]="showLegend"
+                    [legendTitle]="legendTitle" [legendPosition]="legendPosition" [showGridLines]="showGridLines"
+                    [showXAxisLabel]="showXAxisLabel" [showYAxisLabel]="showYAxisLabel"
+                    [showRightYAxisLabel]="showYAxisLabel" [yAxisLabel]="yAxisLabel" [yAxisLabelRight]="yAxisLabelRight"
+                    [xAxisLabel]="xAxisLabel">
+                </combo-chart-component>
+                <!-- 
+                    [yRightAxisTickFormatting]="yRightTickFormat"
+                    [yAxisTickFormatting]="yLeftTickFormat" 
+                    [yLeftAxisScaleFactor]="yLeftAxisScale"
+                    [yRightAxisScaleFactor]="yRightAxisScale"
+                    [xAxisLabel]="xAxisLabel"
+                -->
+            </div>
+
+            <div id="input" class="conteudoPrincipal-consumo-tabela">
+                <div>
+                    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+                        <ng-container matColumnDef="mes">
+                            <th class="colum" mat-header-cell *matHeaderCellDef>
+                                Competência
+                            </th>
+                            <td class="colum" mat-cell *matCellDef="let table">{{ table.tipoDado }}</td>
+                        </ng-container>
+
+                        <ng-container matColumnDef="ponta">
+                            <th class="colum" mat-header-cell *matHeaderCellDef>
+                                Consumo[kWh]
+                            </th>
+                            <td class="colum" mat-cell *matCellDef="let table">
+                                {{ table.consumo }}
+                            </td>
+                        </ng-container>
+
+                        <ng-container matColumnDef="fpta">
+                            <th class="colum" mat-header-cell *matHeaderCellDef>
+                                Valor Fatura [R$]
+                            </th>
+                            <td class="colum" mat-cell *matCellDef="let table">
+                                {{ (table.valor|currency:"BRL":"symbol")|mycurrencyBr}}
+                            </td>
+                        </ng-container>
+
+                        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                        <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+                    </table>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,30 @@
+.container {
+    width: 100vw;
+    height: 30vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center
+}
+.container2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center
+}
+        
+@media screen and (max-width: 600px) {
+    .example-viewport {
+        height: 550px;
+        width: 100%;
+    }
+}
+    
+@media screen and (min-width: 600px) {
+    .example-viewport {
+        margin: auto;
+        height: 600px;
+        width: 100%;
+    }
+}
+    

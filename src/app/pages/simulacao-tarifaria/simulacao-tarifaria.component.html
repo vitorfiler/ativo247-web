@@ -1,0 +1,29 @@
+<div style="margin-left: 16%; margin-right: 16%; margin-bottom: 16%; margin-top: 16%;">
+  <div class="row">
+    <ngx-charts-bar-vertical
+      [view]="view"
+      [scheme]="colorScheme"
+      [results]="demandaIdeal"
+      [gradient]="gradient"
+      [xAxis]="showXAxis"
+      [yAxis]="showYAxis"
+      [legend]="showLegend"
+      [showXAxisLabel]="showXAxisLabel"
+      [showYAxisLabel]="showYAxisLabel"
+      [xAxisLabel]="xAxisLabel"
+      [yAxisLabel]="yAxisLabel">
+    </ngx-charts-bar-vertical>
+  </div>
+  <div  class="row">
+    <p style="font-size: x-large;">Classe Tarifária: <label style="color: red;"> {{tarifaria}}</label></p>
+  </div>
+  <div  class="row">
+    <p style="font-size: x-large;">Demanda Ponta: <label style="color: red;"> {{ponta}}</label></p>
+  </div>
+  <div class="row">
+    <p style="font-size: x-large;">Demanda Fora Ponta: <label style="color: red;"> {{foraPonta}}</label></p>
+  </div>
+  <div class="row">
+    <p style="font-size: x-large;">Economia Anual: <label style="color: red;"> {{anual}}</label></p>
+  </div>
+</div>

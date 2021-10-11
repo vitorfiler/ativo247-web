@@ -1,0 +1,76 @@
+<!-- <cdk-virtual-scroll-viewport [itemSize]="18 * 7" class="example-viewport"> -->
+<div style="margin-left: 15%; margin-right: 15%; margin-top: 7%; margin-bottom: 15%;">
+    <div class="row" style="text-align: left;">
+        <div class="col">
+            <mat-form-field appearance="outline">
+                <mat-label>Unidade Consumidora</mat-label>
+                <mat-select #myselect matNativeControl id="gauge1"  [(ngModel)]="unidade.uc">
+                    <!-- [(ngModel)]="unidade.ucGauge1" (ngModelChange)="gauge(unidade.ucGauge1, '1')" -->
+                    <mat-option *ngFor="let loja of listLojas" [value]="loja" (click)="setStatus(unidade.uc)">{{loja}}</mat-option>
+                    <!-- <mat-option ngSe>epaNenem</mat-option> -->
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <!-- <div class="col">
+            <mat-form-field appearance="outline">
+                <mat-label>Mês / Ano</mat-label>
+                <mat-select #myselect matNativeControl>
+                    <mat-option *ngFor="let mes of listMes" [value]="mes" (click)="graficos(unidade.uc, mes)">
+                        {{ mes }}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div> -->
+    </div>
+
+        <div style="margin-left: 15%;">
+            <!-- <cdk-virtual-scroll-viewport [itemSize]="18 * 7" class="example-viewport"> -->
+            <div>
+ 
+                <p style="justify-content: flex-end;">{{data}}</p>
+                <table id="tableCreditoGD" mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+                    <ng-container matColumnDef="CampoRessarcido">
+                        <th mat-header-cell *matHeaderCellDef class="colum">
+                            Campo Ressarcido
+                        </th>
+                        <td class="colum" mat-cell *matCellDef="let table">{{ table.campoRessarcido }}</td>
+                    </ng-container>
+        
+                    <ng-container matColumnDef="Valor" >
+                        <th class="colum" mat-header-cell *matHeaderCellDef>
+                            Valor (R$)
+                        </th>
+                        <td class="colum" mat-cell *matCellDef="let table">
+                            {{ table.valor }}
+                        </td>
+                    </ng-container>
+        
+                    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+                </table>
+            </div>
+            <!-- </cdk-virtual-scroll-viewport> -->
+        </div>
+    <div class="row">
+        <div style="margin-left: 15%; margin-right: 15%; margin-top: 5%; background-color: #dfe6ed;" class="col-md-8 card">
+            <div style="margin-left: 1%; margin-top: 2%; margin-bottom: 10px;">
+                <span style="font-size: medium;">Há UM VALOR DE R$ {{valor}} A SER RESSARCIDO</span>
+            </div>
+            <div style="margin-left: 1%; margin-top: 2%; margin-bottom: 10px;">
+                <span style="font-size: medium;">*VALOR REFERENTE AOS ÚLTIMOS 36 MESES DE FATURA</span>
+            </div>
+        </div>
+
+        <div style="margin-left: 82%;" class="col-md-4">
+            <button class="btn btn-primary" (click)="renderizarModal()">Contratar</button>
+        </div>
+    </div>
+
+
+    <div style="margin-left: 5%; margin-top: 30px; margin-right: 1%;" class="row">
+        <div style="text-align: center;" class="col">
+            <label><p style="font-size: large;">*Calculos baseados nas resoluções homologatórias da Unidade Consumidora</p></label>
+        </div>
+    </div>
+</div>
+<!-- </cdk-virtual-scroll-viewport> -->

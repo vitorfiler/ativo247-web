@@ -1,0 +1,14 @@
+@media screen and (max-width: 600px) {
+    .example-viewport {
+        height: 550px;
+        width: 100%;
+    }
+}
+  
+@media screen and (min-width: 600px) {
+    .example-viewport {
+        margin: auto;
+        height: 900px;
+        width: 100%;
+    }
+}

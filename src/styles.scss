@@ -1,0 +1,227 @@
+@import "~simplebar/dist/simplebar.css";
+@import "~highlight.js/styles/androidstudio.css";
+// Vex Core
+@import "./@vex/styles/core";
+
+/*
+  You can override any CSS Variable or style here
+  Example:
+
+  :root {
+   --sidenav-background: #333333;
+  }
+
+  All possible variables can be found in @vex/styles/core or by simply inspecting the element you want to change
+  in Chrome/Firefox DevTools
+*/
+
+/**
+  Uncomment the below code and adjust the values to fit your colors, the application will automatically adjust
+ */
+:root {
+  // --color-primary: blue;
+  // --color-primary-contrast: white;
+
+  // --color-accent: yellow;
+  // --color-accent-contrast: black;
+
+  // --color-warn: yellow;
+  // --color-warn-contrast: black;
+}
+
+.ajuda_icon {
+  background: url("/assets/icons/Ajuda.png");
+  height: 30px;
+  width: 30px;
+  display: block;
+  background-size: 30px;
+  /* Other styles here */
+}
+.consumo_icon {
+  background: url("/assets/icons/Consumo.png");
+  height: 30px;
+  width: 30px;
+  display: block;
+  background-size: 30px;
+  /* Other styles here */
+}
+
+.credito_de_gd_icon {
+  background: url("/assets/icons/CreditoDeGD.png");
+  height: 24px;
+  width: 24px;
+  display: block;
+  background-size: 24px;
+  /* Other styles here */
+}
+
+.dashboard_icon {
+  background: url("/assets/icons/Dashboard.png");
+  height: 30px;
+  width: 30px;
+  display: block;
+  background-size: 30px;
+  /* Other styles here */
+}
+
+.financeiro_icon {
+  background: url("/assets/icons/Financeiro.png");
+  height: 24px;
+  width: 24px;
+  display: block;
+  background-size: 30px;
+  /* Other styles here */
+}
+
+.gestao_de_energia_icon {
+  background: url("/assets/icons/GestaoDeEnergia.png");
+  height: 30px;
+  width: 30px;
+  display: block;
+  background-size: 30px;
+  /* Other styles here */
+}
+
+.gestao_de_energias_e_faturas_icon {
+  background: url("/assets/icons/GestaoDeEnergiasEFaturas.png");
+  height: 30px;
+  width: 30px;
+  display: block;
+  background-size: 30px;
+  /* Other styles here */
+}
+
+.calculo_tributario {
+  background: url("/assets/icons/CalculoTributario.png");
+  height: 30px;
+  width: 30px;
+  display: block;
+  background-size: 30px;
+  /* Other styles here */
+}
+
+.mercado_livre {
+  background: url("/assets/icons/MercadoLivre.png");
+  height: 30px;
+  width: 30px;
+  display: block;
+  background-size: 30px;
+  /* Other styles here */
+}
+
+.mudanca_tarifaria {
+  background: url("/assets/icons/MudancaTarifaria.png");
+  height: 30px;
+  width: 30px;
+  display: block;
+  background-size: 30px;
+  /* Other styles here */
+}
+
+.grafico_de_demanda_icon {
+  background: url("/assets/icons/GraficoDeDemanda.png");
+  height: 30px;
+  width: 30px;
+  display: block;
+  background-size: 30px;
+  /* Other styles here */
+}
+
+.pessoa_login_icon {
+  background: url("/assets/icons/PessoaLogin.png");
+  height: 30px;
+  width: 30px;
+  display: block;
+  background-size: 30px;
+  /* Other styles here */
+}
+
+.simulador_de_gd_icon {
+  background: url("/assets/icons/SimuladorDeGD.png");
+  height: 30px;
+  width: 30px;
+  display: block;
+  background-size: 30px;
+  /* Other styles here */
+}
+
+.unidades_consumidoras_icon {
+  background: url("/assets/icons/UnidadesConsumidoras.png");
+  height: 30px;
+  width: 30px;
+  display: block;
+  background-size: 30px;
+  /* Other styles here */
+}
+
+.ajuda_meu_icon {
+  @extend .ajuda_icon;
+  background-size: 24px;
+}
+.consumo_menu_icon {
+  @extend .consumo_icon;
+  background-size: 24px;
+}
+
+.credito_de_gd_menu_icon {
+  @extend .credito_de_gd_icon;
+  background-size: 24px;
+}
+
+.dashboard_menu_icon {
+  @extend .dashboard_icon;
+  background-size: 24px;
+}
+
+.financeiro_menu_icon {
+  @extend .financeiro_icon;
+  background-size: 24px;
+}
+
+.gestao_de_energia_menu_icon {
+  @extend .gestao_de_energia_icon;
+  background-size: 24px;
+}
+
+.gestao_de_energias_e_faturas_menu_icon {
+  @extend .gestao_de_energias_e_faturas_icon;
+  background-size: 24px;
+}
+
+.mercado_livre_menu_icon {
+  @extend .mercado_livre;
+  background-size: 24px;
+}
+
+.calculo_tributario_menu_icon {
+  @extend .calculo_tributario;
+  background-size: 24px;
+}
+
+.mudanca_tarifaria_menu_icon {
+  @extend .mudanca_tarifaria;
+  background-size: 24px;
+}
+
+.grafico_de_demanda_menu_icon {
+  @extend .grafico_de_demanda_icon;
+  background-size: 24px;
+}
+
+.pessoa_login_menu_icon {
+  @extend .pessoa_login_icon;
+  background-size: 24px;
+}
+
+.simulador_de_gd_menu_icon {
+  @extend .simulador_de_gd_icon;
+  background-size: 24px;
+}
+
+.unidades_consumidoras_menu_icon {
+  @extend .unidades_consumidoras_icon;
+  background-size: 24px;
+}
+.legend-label{
+  color: #050f23 !important;
+}

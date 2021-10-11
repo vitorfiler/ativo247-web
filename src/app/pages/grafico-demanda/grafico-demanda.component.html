@@ -1,0 +1,40 @@
+<div class="col">
+    <mat-form-field appearance="outline">
+        <mat-label>Selecione</mat-label>
+        <mat-select #myselect matNativeControl id="uc">
+            <mat-option *ngFor="let loja of listLojas" [value]="loja" (click)="atualizaGrafico(loja)">{{loja}}</mat-option>
+        </mat-select>
+    </mat-form-field>
+</div>
+<div class="layout-tela">
+    
+    <!-- <div style="text-align: center;">
+        <label style="padding-bottom: 5px; font-size: x-large;"><b>Grafico de controle de Demanda</b></label>
+    </div> --> 
+    <div>
+        <combo-chart-component
+            [view]="view"
+            [scheme]="comboBarScheme"
+            [colorSchemeLine]="lineChartScheme"
+            [results]="barChart"
+            [gradient]="gradient"
+            [animations]="animations"
+            [lineChart]="lineChartSeries"
+            [gradient]="gradient"
+            [xAxis]="showXAxis"
+            [yAxis]="showYAxis"
+            [legend]="showLegend"
+            [legendTitle]="legendTitle"
+            [legendPosition]="legendPosition"
+            [showGridLines]="showGridLines"
+            [showXAxisLabel]="showXAxisLabel"
+            [showYAxisLabel]="showYAxisLabel"
+            [showRightYAxisLabel]="showYAxisLabel"
+            [yAxisLabel]="yAxisLabel"
+            [yAxisLabelRight]="yAxisLabelRight">
+        </combo-chart-component>
+    </div>
+    <div class="row" style="float: right; align-content: center; margin-left: 5%;">
+        <button (click)="abrirModal()" [disabled]="!simulacaoTarifaService.uc" color="primary" mat-raised-button type="button">Contratar</button>
+    </div>
+</div>

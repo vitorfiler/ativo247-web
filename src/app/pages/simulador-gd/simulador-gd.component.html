@@ -1,0 +1,64 @@
+<mat-card style="height: 200px; margin-top: 15%; margin-left: 13%; margin-right: 13%; padding-bottom: 13%;">
+
+    <div id="wrapper" style="padding-bottom: 5%;">
+        <div id="leftcolumn" style="border-right: 1px solid #111;">
+            <div>
+                <p><b>SIMULE SUA ECONOMIA NA GERAÇÃO COMPARTILHADA</b></p>
+            </div>
+            <!--button  -->
+            <div *ngIf="falhaValorFatura">
+                <mat-error>
+                    {{falhaFatura}}
+                </mat-error>
+            </div>
+            <div style="padding-top: 6%;" id="button">
+                <mat-form-field appearance="outline" class="example-full-width">
+                    <mat-label>Valor da fatura mensal</mat-label>
+                    <input type="number" matInput placeholder="R$" [(ngModel)]="valorFatura" />
+                </mat-form-field>
+                <button style="margin-left: 5px;" mat-raised-button color="primary" (click)="getSimulador(valorFatura)"
+                    class="button-filter-date">Enviar</button>
+            </div>
+            <label>Apenas unidades de baixa tensão e valores superiores a R$1.200,00</label>
+
+            <!--  -->
+        </div>
+        <!-- <hr style=" transform: rotate(90deg); width: 100px; "> -->
+        <div id="rightcolumn">
+            <p><b>Sua economia anual prevista será de:</b></p>
+        </div>
+        <br />
+        <div id="rightcolumn">
+            <p><b style="color: #0068B0; font-size: x-large;">R$ {{economia_anual}}</b></p>
+        </div>
+        <br/>
+        <div>
+            <table>
+                <tr>
+                    <td style="padding-left: 100px;">
+                        <img style="max-width: 16px;"
+                        src="assets/images/logos/tree1.png" />
+                    </td>
+                    <td>
+                        <b style="color: #0068B0;">{{n_arvores}} </b>
+                        Árvores poupadas por mês
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding-left: 100px;">
+                        <img style="max-width: 16px;"
+                        src="assets/images/logos/co2.png" />
+                    </td>
+                    <td>
+                        <b style="color: #0068B0;"> {{CO2}}</b>
+                        emissão de carbono evitado ao mês
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div class="row" style="float: right; align-content: center; margin-left: 5%;">
+        <a href="https://forms.monday.com/forms/168a1fe057f575abcd121d604ce06359?r=use1" color="primary" mat-raised-button type="button" target="_blank">Contratar</a>
+    </div>
+
+</mat-card>

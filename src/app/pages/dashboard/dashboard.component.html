@@ -1,0 +1,191 @@
+<ng-container style="padding-bottom: 15%;">
+    <div class="row">
+        <div class="col" style="margin-top: 41px; margin-left: 7%;">
+            <div class="row">
+                <div class="col">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Selecione UC</mat-label>
+                        <mat-select #myselect matNativeControl id="gauge1" [(ngModel)]="unidade.ucGauge1">
+                            <mat-option *ngFor="let loja of listLojas" [value]="loja.uc" (click)="gauge('1', unidade.ucGauge1)">
+                                {{ loja.uc }}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+                <div class="col">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Mês / Ano</mat-label>
+                        <mat-select #myselect matNativeControl>
+                            <mat-option *ngFor="let mes of listMes" [value]="mes" (click)="gauge('1', unidade.ucGauge1, mes)">
+                                {{ mes }}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="row">
+                <div style="margin-left: 22%;" class="col">
+                    <ngx-gauge [size]="240" [type]="gaugeType" [max]="dashboardService.max1"
+                        [value]="dashboardService.consumoGauge1" [thick]="7" [duration]="1000" [label]="gaugeLabel"
+                        [thresholds]="dashboardService.thresholds1">
+                        <ngx-gauge-value>
+                            {{ formatDisplayValue(dashboardService.consumoGauge1, "") }}
+                        </ngx-gauge-value>
+                    </ngx-gauge>
+                </div>
+            </div>
+            <div class="row text-gauge">
+                <label style="padding-bottom: 5px;"><b>Consumo [kWh]</b></label>
+            </div>
+            <div style="margin-left: 22%; font-size: xx-large;" class="row">
+                <div class="col">
+                    <span class="badge badge-secondary">{{consumoPrecisaoEsquerda}}%</span>
+                </div>
+                <div class="col">
+                    <span class="badge badge-secondary">{{consumoPrecisaoDireita}}%</span>
+                </div>
+            </div>
+            <div class="row" style="margin-left: 17%;">
+                <ngx-charts-bar-vertical-2d
+                    [view]="view"
+                    [scheme]="colorScheme"
+                    [results]="consumo1"
+                    [gradient]="gradient"
+                    [xAxis]="showXAxis"
+                    [yAxis]="showYAxis"
+                    [legend]="showLegend"
+                    [showXAxisLabel]="showXAxisLabel"
+                    [showYAxisLabel]="showYAxisLabel"
+                    [xAxisLabel]="xAxisLabelConsumo"
+                    [yAxisLabel]="yAxisLabel"
+                    [legendTitle]="legendTitle">
+                    </ngx-charts-bar-vertical-2d>
+            </div>
+            <br />
+            <div class="row" style="margin-left: 17%;">
+                <ngx-charts-bar-vertical-2d
+                    [view]="view"
+                    [scheme]="colorScheme"
+                    [results]="demanda1"
+                    [gradient]="gradient"
+                    [xAxis]="showXAxis"
+                    [yAxis]="showYAxis"
+                    [legend]="showLegend"
+                    [showXAxisLabel]="showXAxisLabel"
+                    [showYAxisLabel]="showYAxisLabel"
+                    [xAxisLabel]="xAxisLabelDemanda"
+                    [yAxisLabel]="yAxisLabel"
+                    [legendTitle]="legendTitle">
+                    </ngx-charts-bar-vertical-2d>
+            </div>
+        </div>
+        <div class="col" style="margin-top: 60px; margin-left: 7%;">
+            <div class="row" style="margin-left: 200px; ">
+                <button [routerLink]="['/cad-metas']" (click)="editar()" class="btn btn-primary" [disabled]="disableEditar">Editar metas</button>
+            </div>
+            <div class="row" style="padding-top: 7%;">
+                <ngx-gauge [size]="240" [type]="gaugeType" [max]="dashboardService.max2"
+                    [value]="dashboardService.consumoGauge2" [thick]="7" [duration]="1000" [label]="gaugeLabel"
+                    [thresholds]="dashboardService.thresholds2">
+                    <ngx-gauge-value>
+                        {{ formatDisplayValue(dashboardService.consumoGauge2, "") }}
+                    </ngx-gauge-value>
+                </ngx-gauge>
+            </div>
+            <div class="row text-gauge2">
+                <label style="text-align: center; padding-bottom: 5px;"><b>Valor Bruto [R$]</b></label>
+            </div>
+            <div class="row" style="margin-right: 20%; font-size: xx-large;">
+                <div class="col">
+                    <span class="badge badge-secondary">{{valorTotalPrecisaoEsquerda}}%</span>
+                </div>
+                <div class="col">
+                    <span class="badge badge-secondary">{{valorTotalPrecisaoDireita}}%</span>
+                </div>
+            </div>
+            <div class="row" style="margin-left: -8%;">
+                <ngx-charts-bar-vertical-2d
+                    [view]="view"
+                    [scheme]="colorScheme"
+                    [results]="consumo2"
+                    [gradient]="gradient"
+                    [xAxis]="showXAxis"
+                    [yAxis]="showYAxis"
+                    [legend]="showLegend"
+                    [showXAxisLabel]="showXAxisLabel"
+                    [showYAxisLabel]="showYAxisLabel"
+                    [xAxisLabel]="xAxisLabelFatura"
+                    [yAxisLabel]="yAxisLabel"
+                    [legendTitle]="legendTitle">
+                    </ngx-charts-bar-vertical-2d>
+            </div>
+            <br />
+            <div class="row" style="margin-left: -8%;">
+                <ngx-charts-bar-vertical-2d
+                    [view]="view"
+                    [scheme]="colorScheme"
+                    [results]="demanda2"
+                    [gradient]="gradient"
+                    [xAxis]="showXAxis"
+                    [yAxis]="showYAxis"
+                    [legend]="showLegend"
+                    [showXAxisLabel]="showXAxisLabel"
+                    [showYAxisLabel]="showYAxisLabel"
+                    [xAxisLabel]="xAxisLabelReativo"
+                    [yAxisLabel]="yAxisLabel"
+                    [legendTitle]="legendTitle">
+                    </ngx-charts-bar-vertical-2d>
+            </div>
+        </div>
+    </div>
+    <div style="margin-left: 7%; margin-top: 3%;" class="row table">
+        <table style="margin-bottom: 25%;" mat-table [dataSource]="dataSource1" class="mat-elevation-z8">
+            <ng-container matColumnDef="mes">
+                <th style="text-align: center;" mat-header-cell *matHeaderCellDef>
+                    Mês
+                </th>
+                <td style="text-align: center;" mat-cell *matCellDef="let table">{{ table.meses }}</td>
+            </ng-container>
+
+            <ng-container matColumnDef="consumo">
+                <th style="text-align: center;" mat-header-cell *matHeaderCellDef>
+                    Consumo[kWh]
+                </th>
+                <td style="text-align: center;" mat-cell *matCellDef="let table">
+                    {{ table.consumo }}
+                </td>
+            </ng-container>
+
+            <ng-container matColumnDef="demanda">
+                <th style="text-align: center;" mat-header-cell *matHeaderCellDef>
+                    Demanda [kW]
+                </th>
+                <td style="text-align: center;" mat-cell *matCellDef="let table">
+                    {{ table.demanda }}
+                </td>
+            </ng-container>
+
+            <ng-container matColumnDef="reativo">
+                <th style="text-align: center;" mat-header-cell *matHeaderCellDef>
+                    Reativo [kWh]
+                </th>
+                <td style="text-align: center;" mat-cell *matCellDef="let table">
+                    {{ table.reativo }}
+                </td>
+            </ng-container>
+
+            <ng-container matColumnDef="valorTotal">
+                <th style="text-align: center;" mat-header-cell *matHeaderCellDef>
+                    Valor Bruto[R$]
+                </th>
+                <td style="text-align: center;" mat-cell *matCellDef="let table">
+                    {{ table.valorTotal }}
+                </td>
+            </ng-container>
+
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+        </table>
+    </div>
+</ng-container>

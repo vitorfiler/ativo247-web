@@ -1,0 +1,76 @@
+<div class="col">
+    <mat-form-field appearance="outline">
+        <mat-label>Selecione</mat-label>
+        <mat-select #myselect matNativeControl id="uc">
+            <mat-option *ngFor="let loja of listLojas" [value]="loja" (click)="atualizaGrafico(loja)">{{loja}}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+</div>
+<div class="layout-tela">
+
+    <!-- <div style="text-align: center;">
+            <label style="padding-bottom: 5px; font-size: x-large;"><b>Projeção de Consumo</b></label>
+        </div> -->
+
+
+    <div class="conteudoPrincipal-consumo">
+        <div class="container">
+            <div class="conteudoPrincipal-consumo-grafico">
+                <combo-chart-component [view]="view" [scheme]="comboBarSchemeConsumo"
+                    [colorSchemeLine]="lineChartSchemeConsumo" [results]="barChartConsumo" [gradient]="gradient"
+                    [animations]="animations" [lineChart]="lineChartSeriesConsumo" [gradient]="gradient"
+                    [xAxis]="showXAxis" [yAxis]="showYAxis" [legend]="showLegend" [legendTitle]="legendTitle"
+                    [legendPosition]="legendPosition" [showGridLines]="showGridLines" [showXAxisLabel]="showXAxisLabel"
+                    [showYAxisLabel]="showYAxisLabel" [showRightYAxisLabel]="showYAxisLabel" [yAxisLabel]="yAxisLabel"
+                    [yAxisLabelRight]="yAxisLabelRight" [xAxisLabel]="xAxisLabel">
+                </combo-chart-component>
+            </div>
+            <div id="input" class="conteudoPrincipal-consumo-tabela">
+                <div>
+                    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+                        <ng-container matColumnDef="mes">
+                            <th class="colum" mat-header-cell *matHeaderCellDef>
+                                Competência
+                            </th>
+                            <td class="colum" mat-cell *matCellDef="let table">{{ table.meses }}</td>
+                        </ng-container>
+
+                        <ng-container matColumnDef="projecao">
+                            <th class="colum" mat-header-cell *matHeaderCellDef>
+                                Projetado [kWh]
+                            </th>
+                            <td class="colum" mat-cell *matCellDef="let table">
+                                {{ table.projecao }}
+                            </td>
+                        </ng-container>
+
+                        <ng-container matColumnDef="consumo">
+                            <th class="colum" mat-header-cell *matHeaderCellDef>
+                                Realizado [kWh]
+                            </th>
+                            <td class="colum" mat-cell *matCellDef="let table">
+                                {{ table.consumo }}
+                            </td>
+                        </ng-container>
+
+                        <ng-container matColumnDef="precisao">
+                            <th class="colum" mat-header-cell *matHeaderCellDef>
+                                %Probabilidade
+                            </th>
+                            <td class="colum" mat-cell *matCellDef="let table">
+                                {{ table.precisao }}
+                            </td>
+                        </ng-container>
+
+                        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                        <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+                    </table>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+</div>

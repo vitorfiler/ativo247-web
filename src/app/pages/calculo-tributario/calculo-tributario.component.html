@@ -1,0 +1,43 @@
+<div style="margin-left: 15%; margin-right: 15%; margin-top: 7%;">
+	<vex-load *ngIf="load"></vex-load>
+	<div class="row" style="text-align: left;">
+		<div class="col">
+			<mat-form-field appearance="outline">
+				<mat-label>Unidade Consumidora</mat-label>
+				<mat-select #myselect matNativeControl id="gauge1" [(ngModel)]="unidade.uc">
+					<mat-option *ngFor="let loja of listLojas" [value]="loja" (click)="setStatus(unidade.uc)">{{loja}}
+					</mat-option>
+				</mat-select>
+			</mat-form-field>
+		</div>
+	</div>
+
+	<cdk-virtual-scroll-viewport [itemSize]="18 * 7" class="example-viewport">
+		<div style="margin-left: 15%;">
+			<div>
+
+				<p style="justify-content: flex-end;" *ngIf="data">Período de apuração: <span>{{data}}</span></p>
+				<table id="tableCreditoGD" mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+					<ng-container matColumnDef="Oportunidades">
+						<th mat-header-cell *matHeaderCellDef class="colum">
+							Oportunidades
+						</th>
+						<td class="colum" mat-cell *matCellDef="let table">{{ table.oportunidade }}</td>
+					</ng-container>
+
+					<ng-container matColumnDef="Valor">
+						<th class="colum" mat-header-cell *matHeaderCellDef>
+							Valor (R$)
+						</th>
+						<td class="colum" mat-cell *matCellDef="let table">
+							{{ table.valor }}
+						</td>
+					</ng-container>
+
+					<tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+					<tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+				</table>
+			</div>
+		</div>
+	</cdk-virtual-scroll-viewport>
+</div>

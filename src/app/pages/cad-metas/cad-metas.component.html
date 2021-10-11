@@ -1,0 +1,52 @@
+<div style="margin-left: 27%; margin-right: 27%; margin-top: 15%;">
+    <div class="row">
+        <div style="text-align: center; " class="col">
+            <label ><p style="font-size: xx-large; margin-bottom: 40px;">Unidade {{ucSelecionado}}</p></label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <label><p>Consumo Mensal [kWh]</p></label>
+        </div>
+        <div class="col">
+            <label><p>Fatura Energia [R$/mês]</p></label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <mat-form-field appearance="outline">
+              <mat-label>Meta</mat-label>
+              <input matInput placeholder="Consumo Mensal [kWh]" [(ngModel)]="consumoMensalMeta" (keyup)="disableButton()">
+              <!-- <mat-hint align="end">/10</mat-hint> -->
+            </mat-form-field>
+        </div>
+        <div class="col">
+            <mat-form-field appearance="outline">
+              <mat-label>Meta</mat-label>
+              <input matInput placeholder="Fatura Energia [R$/mês]" [(ngModel)]="faturaEnergiaMeta" (keyup)="disableButton()">
+              <!-- <mat-hint align="end">/10</mat-hint> -->
+            </mat-form-field>
+        </div>      
+    </div>
+    <div class="row">
+        <div class="col">
+            <mat-form-field appearance="outline">
+            <mat-label>Limite máximo</mat-label>
+            <input matInput #input placeholder="Consumo Mensal [kWh]" [(ngModel)]="consumoMensalLimite" (keyup)="disableButton()">
+            <!-- <mat-hint align="end">/10</mat-hint> -->
+            </mat-form-field>
+        </div>
+        <div class="col">
+            <mat-form-field appearance="outline">
+            <mat-label>Limite máximo</mat-label>
+            <input matInput #input placeholder="Fatura Energia [R$/mês]" [(ngModel)]="faturaEnergiaLimite">
+            <!-- <mat-hint align="end">/10</mat-hint> -->
+            </mat-form-field>
+        </div>  
+    </div>
+    <div class="row">
+        <div style="text-align: center; " class="col">
+            <button [routerLink]="['/dashboard']" class="btn btn-primary" (click)="sendFields()" [disabled]="disableSalvar">Salvar</button>
+        </div>
+    </div>
+</div>

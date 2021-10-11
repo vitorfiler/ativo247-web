@@ -1,0 +1,191 @@
+<cdk-virtual-scroll-viewport [itemSize]="18 * 7" class="example-viewport">
+<div style="text-align: center; margin-left: 10%; margin-right: 10%; margin-top: 3%;">
+    <div class="row">
+        <div style="text-align: center;" class="col">
+            <label ><p style="font-size: xx-large; margin-bottom: 40px;">Atividades de gestão de energia</p></label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-3">
+            <label ><p style="font-size: xx-large; margin-bottom: 40px;">Status</p></label>
+        </div>
+        <div class="col-md-3">
+            <label ><p style="font-size: xx-large; margin-bottom: 40px;">Processo</p></label>
+        </div>
+        <div class="col-md-3">
+            <label ><p style="font-size: xx-large; margin-bottom: 40px;">Valor</p></label>
+        </div>
+        <div class="col-md-3">
+            <label ><p style="font-size: xx-large; margin-bottom: 40px;">Protocolo</p></label>
+        </div>
+    </div>
+    <div class="row" style="margin-bottom: 15px;">
+        <div class="col">
+            <div style="margin-left: 25%; margin-right: 25%;" class="row">
+                <div class="col">
+                    <img style="max-width: 30px;" src="{{status1.naoRealizado}}" alt="">
+                </div>
+                <div class="col">
+                    <img style="max-width: 30px;" src="{{status1.protocolado}}" alt="">
+                </div>
+                <div class="col">
+                    <img style="max-width: 30px;" src="{{status1.finalizado}}" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <label ><p style="font-size: medium;">{{status1.nome}}</p></label>
+        </div>   
+        <div class="col">
+            <label ><p style="font-size: medium;">R$ {{status1.valor}}</p></label>
+        </div>  
+        <div class="col">
+            <label ><p style="font-size: medium;">{{status1.protocolo}}</p></label>
+        </div>     
+    </div>
+    <div class="row" style="margin-bottom: 15px;">
+        <div class="col">
+            <div style="margin-left: 25%; margin-right: 25%;" class="row">
+                <div class="col">
+                    <img style="max-width: 30px;" src="{{status2.naoRealizado}}" alt="">
+                </div>
+                <div class="col">
+                    <img style="max-width: 30px;" src="{{status2.protocolado}}" alt="">
+                </div>
+                <div class="col">
+                    <img style="max-width: 30px;" src="{{status2.finalizado}}" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <label ><p style="font-size: medium;">{{status2.nome}}</p></label>
+        </div>   
+        <div class="col">
+            <label ><p style="font-size: medium;">R$ {{status2.valor}}</p></label>
+        </div>  
+        <div class="col">
+            <label ><p style="font-size: medium;">{{status2.protocolo}}</p></label>
+        </div>     
+    </div>
+    <div class="row" style="margin-bottom: 30px;">
+        <div class="col">
+            <div style="margin-left: 25%; margin-right: 25%;" class="row">
+                <div class="col">
+                    <img style="max-width: 30px;" src="{{status3.naoRealizado}}" alt="">
+                </div>
+                <div class="col">
+                    <img style="max-width: 30px;" src="{{status3.protocolado}}" alt="">
+                </div>
+                <div class="col">
+                    <img style="max-width: 30px;" src="{{status3.finalizado}}" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <label ><p style="font-size: medium;">{{status3.nome}}</p></label>
+        </div>   
+        <div class="col">
+            <label ><p style="font-size: medium;">R$ {{status3.valor}}</p></label>
+        </div>
+        <div class="col">
+            <label ><p style="font-size: medium;">{{status3.protocolo}}</p></label>
+        </div>  
+    </div>
+    <div class="row" style="margin-bottom: 30px;">
+        <div class="col">
+            <div style="margin-left: 25%; margin-right: 25%;" class="row">
+                <div class="col">
+                    <img style="max-width: 30px;" src="{{status4.naoRealizado}}" alt="">
+                </div>
+                <div class="col">
+                    <img style="max-width: 30px;" src="{{status4.protocolado}}" alt="">
+                </div>
+                <div class="col">
+                    <img style="max-width: 30px;" src="{{status4.finalizado}}" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <label ><p style="font-size: medium;">{{status4.nome}}</p></label>
+        </div>   
+        <div class="col">
+            <label ><p style="font-size: medium;">R$ {{status4.valor}}</p></label>
+        </div>
+        <div class="col">
+            <label ><p style="font-size: medium;">{{status4.protocolo}}</p></label>
+        </div>       
+    </div>
+    <div class="row" style="margin-bottom: 35px;">
+        <div class="col">
+            <div style="margin-left: 25%; margin-right: 25%;" class="row">
+                <div class="col">
+                    <img style="max-width: 30px;" src="{{status5.naoRealizado}}" alt="">
+                </div>
+                <div class="col">
+                    <img style="max-width: 30px;" src="{{status5.protocolado}}" alt="">
+                </div>
+                <div class="col">
+                    <img style="max-width: 30px;" src="{{status5.finalizado}}" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <label ><p style="font-size: medium;">{{status5.nome}}</p></label>
+        </div>   
+        <div class="col">
+            <label ><p style="font-size: medium;">R$ {{status5.valor}}</p></label>
+        </div>
+        <div class="col">
+            <label ><p style="font-size: medium;">{{status5.protocolo}}</p></label>
+        </div>      
+    </div>
+    <div class="row" style="margin-bottom: 35px;">
+        <div class="col">
+            <div style="margin-left: 25%; margin-right: 25%;" class="row">
+                <div class="col">
+                    <img style="max-width: 30px;" src="{{status6.naoRealizado}}" alt="">
+                </div>
+                <div class="col">
+                    <img style="max-width: 30px;" src="{{status6.protocolado}}" alt="">
+                </div>
+                <div class="col">
+                    <img style="max-width: 30px;" src="{{status6.finalizado}}" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <label ><p style="font-size: medium;">{{status6.nome}}</p></label>
+        </div>   
+        <div class="col">
+            <label ><p style="font-size: medium;">R$ {{status6.valor}}</p></label>
+        </div>    
+    </div>
+    <div style="margin-left: 10%;" class="row">
+        <div style="text-align: left;" class="col">
+            <label><p style="font-size: x-large; margin-bottom: 10px;">Legenda</p></label>
+        </div>
+    </div>
+    <div style="margin-left: 13%;  margin-bottom: 10px;" class="row">
+        <img style="max-width: 30px;" src="../../../assets/vermelho.png" alt="">
+        <span style="margin-left: 10px;font-size: large;">Não realizado / Não contratado</span>
+    </div>
+    <div style="margin-left: 13%; margin-bottom: 10px;" class="row">
+        <img style="max-width: 30px;" src="../../../assets/amarelo.png" alt="">
+        <span style="margin-left: 10px;font-size: large;">Protocolado</span>
+    </div>
+    <div style="margin-left: 13%; margin-bottom: 10px;" class="row">
+        <img style="max-width: 30px;" src="../../../assets/verde.png" alt="">
+        <span style="margin-left: 10px;font-size: large;">Finalizado</span>
+    </div>
+    <div style="margin-left: 10%; margin-top: 50px;" class="row">
+        <div style="text-align: left;" class="col">
+            <label><p style="font-size: large; margin-bottom: 10px;">Os valores de recuperação englobam o total do valor recuperado previsto / recuperado</p></label>
+        </div>
+    </div>
+    <div style="margin-left: 10%;" class="row">
+        <div style="text-align: left;" class="col">
+            <label><p style="font-size: large; margin-bottom: 10px;">Os valores de Migração ao Mercado Livre e G.D. englobam a economia anual</p></label>
+        </div>
+    </div>
+</div>
+</cdk-virtual-scroll-viewport>

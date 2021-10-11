@@ -1,0 +1,23 @@
+table {
+    width: 80%;
+    // margin-left: 4%;
+    // margin-left: auto;
+}
+  
+@media screen and (max-width: 1600px) {
+    .text-gauge {
+        margin-left: 40%;
+    }
+    .text-gauge2 {
+        margin-left: 11%;
+    }
+}
+  
+@media screen and (min-width: 1600px) {
+    .text-gauge {
+        margin-left: 32%;
+    }
+    .text-gauge2 {
+        margin-left: 7%;
+    }
+}
